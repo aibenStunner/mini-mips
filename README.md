@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="res/images/logo.png" />
+	<img src="res/images/logo.jpg" />
 </p>
 <p align="center">
     A 16 bit Microporocessor Based On Our Subset of MIPS
@@ -8,7 +8,6 @@
 	An implementation of a 16 bit microprocessor based on a subset of the MIPS Instruction set architecture in Logisim. This work is solely for academic purposes.
 </p>
 <p align="center">
-	<img src="https://img.shields.io/github/last-commit/aibenStunner/mips-32-logisim">
 	<img src="https://img.shields.io/github/license/aibenStunner/mini-mips">
 	<img src="https://img.shields.io/github/issues-raw/aibenStunner/mini-mips">
 </p>
