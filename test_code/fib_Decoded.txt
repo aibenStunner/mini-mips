@@ -1,0 +1,50 @@
+>>> FIBONACCI TEST CODE decoded <<<
+
+##To run this by the CPU, load fib.txt into the Instruction Memory
+
+The Fibonacci Sequence is the series of numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+
+
+</> C code to compute the 8th Fibonacci number
+int main()
+{
+	int n = 8; 			/* compute nth Fibonacci number */
+	int f1 = 1, f2 = -1; 		/* last two Fibonacci numbers */
+	while (n != 0) { 		/* count down to n = 0 */
+		f1 = f1 + f2;
+		f2 = f1 - f2;
+		n = n - 1;
+	}
+	
+	printf("%d", f1);		/* output the 8th fibonacci number */
+
+	return 0;
+}
+
+
+<~>Assembly language code for Fibonacci program
+# fib.asm
+# Register usage: $3: n $4: f1 $5: f2
+# return value written to address 0x1
+fib:  addi $3, $0, 8 		# initialize n=8
+      addi $4, $0, 1 		# initialize f1 = 1
+      addi $5, $0, -1 		# initialize f2 = -1
+loop: beq $3, $0, end 		# Done with loop if n = 0
+      add $4, $4, $5 		# f1 = f1 + f2
+      sub $5, $4, $5 		# f2 = f1 - f2
+      addi $3, $3, -1 		# n = n - 1
+      j loop 			# repeat until done
+end:  sw $4, 1($0) 		# store result in address 1
+
+
+<~/>Machine Language code for Fibonacci program
+Instruction 		Binary Encoding 				Hexadecimal Encoding
+addi $3, $0, 8 		001000 00000 00011 0000000000001000 		20030008
+addi $4, $0, 1 		001000 00000 00100 0000000000000001 		20040001
+addi $5, $0, -1 	001000 00000 00101 1111111111111111 		2005ffff
+beq  $3, $0, end 	000100 00011 00000 0000000000000100 		10600004
+add  $4, $4, $5 	000000 00100 00101 00100 00000 100000 		00852020
+sub  $5, $4, $5 	000000 00100 00101 00101 00000 100010 		00852822
+addi $3, $3, -1 	001000 00011 00011 1111111111111111 		2063ffff
+j loop 			000010 0000000000000000000000000011 		08000003
+sw $4, 1($0) 		101011 00000 00100 0000000000000001 		ac040001
