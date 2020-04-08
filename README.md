@@ -8,6 +8,11 @@
 	An implementation of a 16 bit microprocessor based on a subset of the MIPS Instruction set architecture in Logisim. This work is solely for academic purposes.
 </p>
 
+<p align="center">
+	<img src="https://img.shields.io/github/license/aibenStunner/mini-mips">
+	<img src="https://img.shields.io/github/issues-raw/aibenStunner/mini-mips">
+</p>
+
 <hr>
 <h2> Motivation<span style='font-size:100px;'>&#127775;</span></h2>	
 <p>
