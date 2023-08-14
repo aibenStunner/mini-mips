@@ -2,7 +2,7 @@
 	<img src="res/images/logo.jpg" />
 </p>
 <p align="center">
-    A 16 bit Microporocessor Based On Our Subset of MIPS
+    A 16 bit Microprocessor Based On Our Subset of MIPS
 </p>
 <p align="center"> 
 	An implementation of a 16 bit microprocessor based on a subset of the MIPS Instruction set architecture in Logisim. This work is solely for academic purposes.
